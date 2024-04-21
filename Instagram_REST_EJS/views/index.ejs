@@ -28,84 +28,44 @@
         <div class="wrapper">
             <div class="left-col">
                 <div class="status-wrapper">
-                    <div class="status-card">
-                        <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
-                        <p class="username">user_name_1</p>
-                    </div>
-                    <div class="status-card">
-                        <div class="profile-pic"><img src="img/cover 2.png" alt=""></div>
-                        <p class="username">user_name_2</p>
-                    </div>
-                    <div class="status-card">
-                        <div class="profile-pic"><img src="img/cover 3.png" alt=""></div>
-                        <p class="username">user_name_3</p>
-                    </div>
-                    <div class="status-card">
-                        <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
-                        <p class="username">user_name_1</p>
-                    </div>
-                    <div class="status-card">
-                        <div class="profile-pic"><img src="img/cover 2.png" alt=""></div>
-                        <p class="username">user_name_2</p>
-                    </div>
-                    <div class="status-card">
-                        <div class="profile-pic"><img src="img/cover 3.png" alt=""></div>
-                        <p class="username">user_name_3</p>
-                    </div>
+                    <% for(user of users){ %>
+                        <div class="status-card">
+                            <div class="profile-pic"><img src="<%= user.image %>" alt=""></div>
+                            <p class="username"><%= user.username %></p>
+                        </div>
+                    <% } %>
                     <!-- // +5 more status card elements. -->
                 </div>
-                <div class="post">
-                    <div class="info">
-                        <div class="user">
-                            <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
-                            <p class="username">modern_web_channel</p>
+                <% for(user of users){ %>
+
+                    <div class="post">
+                        <div class="info">
+                            <div class="user">
+                                <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
+                                <p class="username"><%= user.username %></p>
+                            </div>
+                            <img src="img/option.PNG" class="options" alt="">
                         </div>
-                        <img src="img/option.PNG" class="options" alt="">
-                    </div>
-                    <img src="img/cover 1.png" class="post-image" alt="">
-                    <div class="post-content">
-                        <div class="reaction-wrapper">
-                            <img src="img/like.PNG" class="icon" alt="">
-                            <img src="img/comment.PNG" class="icon" alt="">
-                            <img src="img/send.PNG" class="icon" alt="">
-                            <img src="img/save.PNG" class="save icon" alt="">
+                        <img src="<%= user.image %>" class="post-image" alt="">
+                        <div class="post-content">
+                            <div class="reaction-wrapper">
+                                <img src="img/like.PNG" class="icon" alt="">
+                                <img src="img/comment.PNG" class="icon" alt="">
+                                <img src="img/send.PNG" class="icon" alt="">
+                                <img src="img/save.PNG" class="save icon" alt="">
+                            </div>
+                            <p class="likes"><%= user.likes %> likes</p>
+                            <p class="description"><span><%= user.username %></span> <%= user.caption %></p>
+                            <p class="post-time">2 minutes ago</p>
                         </div>
-                        <p class="likes">1,012 likes</p>
-                        <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
-                        <p class="post-time">2 minutes ago</p>
-                    </div>
-                    <div class="comment-wrapper">
-                        <img src="img/smile.PNG" class="icon" alt="">
-                        <input type="text" class="comment-box" placeholder="Add a comment">
-                        <button class="comment-btn">post</button>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="info">
-                        <div class="user">
-                            <div class="profile-pic"><img src="img/cover 2.png" alt=""></div>
-                            <p class="username">modern_web_channel</p>
+                        <div class="comment-wrapper">
+                            <img src="img/smile.PNG" class="icon" alt="">
+                            <input type="text" class="comment-box" placeholder="Add a comment">
+                            <button class="comment-btn">post</button>
                         </div>
-                        <img src="img/option.PNG" class="options" alt="">
                     </div>
-                    <img src="img/cover 2.png" class="post-image" alt="">
-                    <div class="post-content">
-                        <div class="reaction-wrapper">
-                            <img src="img/like.PNG" class="icon" alt="">
-                            <img src="img/comment.PNG" class="icon" alt="">
-                            <img src="img/send.PNG" class="icon" alt="">
-                            <img src="img/save.PNG" class="save icon" alt="">
-                        </div>
-                        <p class="likes">1,012 likes</p>
-                        <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
-                        <p class="post-time">2 minutes ago</p>
-                    </div>
-                    <div class="comment-wrapper">
-                        <img src="img/smile.PNG" class="icon" alt="">
-                        <input type="text" class="comment-box" placeholder="Add a comment">
-                        <button class="comment-btn">post</button>
-                    </div>
-                </div>
+
+                <% } %>
                     <!-- // +5 more post elements -->
             </div>
             <div class="right-col">
